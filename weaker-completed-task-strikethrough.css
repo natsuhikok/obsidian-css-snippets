@@ -1,0 +1,8 @@
+/* 完了チェックボックスの文字を少し薄くするが、打ち消し線は弱める */
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"],
+.markdown-preview-view li.task-list-item.is-checked,
+/* Tasks クエリ結果の完了タスク */
+.tasks-layout li.task-list-item.is-checked,
+.plugin-tasks-query-result li.task-list-item.is-checked {
+  text-decoration-color: rgba(128, 128, 128, 0.40);
+}
