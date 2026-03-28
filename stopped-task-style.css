@@ -1,0 +1,51 @@
+/* 停止チェックボックス [-] のスタイル */
+
+/* ソースモード (CM6) */
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"] {
+  color: var(--stopped-task-color, rgba(180, 60, 60, 1));
+  text-decoration: none;
+}
+
+/* プレビュー・閲覧モード */
+.markdown-preview-view li.task-list-item[data-task="-"],
+/* Tasks クエリ結果 */
+.tasks-layout li.task-list-item[data-task="-"],
+.plugin-tasks-query-result li.task-list-item[data-task="-"] {
+  color: var(--stopped-task-color, rgba(180, 60, 60, 1));
+  text-decoration: none;
+}
+
+/* チェックボックスを 🚫 に差し替え */
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"] input[type="checkbox"],
+.markdown-preview-view li.task-list-item[data-task="-"] input[type="checkbox"],
+.tasks-layout li.task-list-item[data-task="-"] input[type="checkbox"],
+.plugin-tasks-query-result li.task-list-item[data-task="-"] input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  width: 1.25em;
+  height: 1.25em;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='%23e53935'/><rect x='18' y='38' width='64' height='24' rx='5' fill='white'/></svg>") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+  top: -0.05em;
+  left: -0.08em;
+}
+
+/* テーマが疑似要素でチェックマークを描画している場合に消す */
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"] input[type="checkbox"]::before,
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"] input[type="checkbox"]::after,
+.markdown-preview-view li.task-list-item[data-task="-"] input[type="checkbox"]::before,
+.markdown-preview-view li.task-list-item[data-task="-"] input[type="checkbox"]::after,
+.tasks-layout li.task-list-item[data-task="-"] input[type="checkbox"]::before,
+.tasks-layout li.task-list-item[data-task="-"] input[type="checkbox"]::after,
+.plugin-tasks-query-result li.task-list-item[data-task="-"] input[type="checkbox"]::before,
+.plugin-tasks-query-result li.task-list-item[data-task="-"] input[type="checkbox"]::after {
+  display: none !important;
+}
